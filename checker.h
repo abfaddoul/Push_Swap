@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdfaddo <abdfaddo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 19:55:30 by abdfaddo          #+#    #+#             */
-/*   Updated: 2025/12/17 16:39:56 by abdfaddo         ###   ########.fr       */
+/*   Created: 2025/12/17 19:17:24 by abdfaddo          #+#    #+#             */
+/*   Updated: 2025/12/17 19:18:17 by abdfaddo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
+# include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
@@ -51,6 +52,7 @@ int		reverse_rotate_stack(t_stack *s);
 int		rotate_stack(t_stack *s);
 int		push_stack(t_stack *dst, t_stack *src);
 int		swap_stack(t_stack *s);
+int		exec_instruction(char *line, t_stack *a, t_stack *b);
 char	**ft_split_ws(const char *s);
 char	*dup_word(const char *s, int start, int end);
 char	**fill_words_ws(char **full, const char *s);
@@ -95,5 +97,7 @@ void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 void	free_stack(t_stack *s);
 void	init_stacks(t_stack *a, t_stack *b);
+void	read_and_exec(t_stack *a, t_stack *b);
+void	print_result(t_stack *a, t_stack *b);
 
 #endif
