@@ -16,11 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 #include <limits.h>
+#include <stdio.h>
 
 typedef struct s_node
 {
 	int				value;
 	int				index;
+	int				cost_a;
+	int				cost_b;
+	struct s_node	*target;
 	struct s_node	*next;
 }	t_node;
 
@@ -39,6 +43,7 @@ void    stack_add_bottom(t_stack *stack, t_node *new);
 char	**ft_split_ws(const char *s);
 void	sort_5(t_stack *a, t_stack *b);
 void	assign_index(t_stack *a);
+void	turk_sort(t_stack *a, t_stack *b);
 
 /* checks */
 int     is_sorted(t_stack *a);
