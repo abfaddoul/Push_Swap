@@ -26,7 +26,7 @@ void	check_duplicates(t_stack *a)
 		while (cmp)
 		{
 			if (cmp->value == cur->value)
-				ps_error();
+				ps_error_exit(a, NULL, NULL);
 			cmp = cmp->next;
 		}
 		cur = cur->next;

@@ -62,8 +62,7 @@ void	add_value_or_error(t_stack *a, char **tok, int value)
 	n = new_node(value);
 	if (!n)
 	{
-		free_tokens(tok);
-		ps_error();
+		ps_error_exit(a, NULL, tok);
 	}
 	stack_add_bottom(a, n);
 }
@@ -78,8 +77,7 @@ void	parse_tokens_to_stack(t_stack *a, char **tok)
 	{
 		if (!ps_atoi(tok[j], &value))
 		{
-			free_tokens(tok);
-			ps_error();
+			ps_error_exit(a, NULL, tok);
 		}
 		add_value_or_error(a, tok, value);
 		j++;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_stack.c                                      :+:      :+:    :+:   */
+/*   build_stack_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdfaddo <abdfaddo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 05:47:43 by abdfaddo          #+#    #+#             */
-/*   Updated: 2025/12/17 05:54:07 by abdfaddo         ###   ########.fr       */
+/*   Updated: 2025/12/19 02:52:31 by abdfaddo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	build_stack_a(t_stack *a, int ac, char **av)
 	while (i < ac)
 	{
 		if (is_only_ws(av[i]))
-			ps_error();
+			ps_error_exit(a, NULL, NULL);
 		tok = ft_split_ws(av[i]);
 		if (!tok || !tok[0])
-			(free_tokens(tok), ps_error());
+			(ps_error_exit(a, NULL, tok));
 		parse_tokens_to_stack(a, tok);
 		free_tokens(tok);
 		i++;

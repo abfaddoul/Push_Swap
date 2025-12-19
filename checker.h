@@ -6,7 +6,7 @@
 /*   By: abdfaddo <abdfaddo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 19:17:24 by abdfaddo          #+#    #+#             */
-/*   Updated: 2025/12/17 19:18:17 by abdfaddo         ###   ########.fr       */
+/*   Updated: 2025/12/19 02:54:16 by abdfaddo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_node	*max_index_node(t_stack *s);
 t_node	*get_target_in_a(t_stack *a, int b_index);
 t_node	*get_cheapest(t_stack *b);
 void	build_stack_a(t_stack *a, int ac, char **av);
-void	ps_error(void);
+void	ps_error_exit(t_stack *a, t_stack *b, char **tok);
 void	stack_add_bottom(t_stack *stack, t_node *new);
 void	sort_5(t_stack *a, t_stack *b);
 void	assign_index(t_stack *a);

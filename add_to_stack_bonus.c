@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_to_stack.c                                     :+:      :+:    :+:   */
+/*   add_to_stack_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdfaddo <abdfaddo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 05:47:34 by abdfaddo          #+#    #+#             */
-/*   Updated: 2025/12/17 05:51:23 by abdfaddo         ###   ########.fr       */
+/*   Updated: 2025/12/19 02:53:16 by abdfaddo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ps_error(void)
+void	ps_error_exit(t_stack *a, t_stack *b, char **tok)
 {
+	if (tok)
+		free_tokens(tok);
+	if (a)
+		free_stack(a);
+	if (b)
+		free_stack(b);
 	write(2, "Error\n", 6);
 	exit(1);
 }

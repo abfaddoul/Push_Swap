@@ -21,10 +21,10 @@ void	build_stack_a(t_stack *a, int ac, char **av)
 	while (i < ac)
 	{
 		if (is_only_ws(av[i]))
-			ps_error();
+			ps_error_exit(a, NULL, NULL);
 		tok = ft_split_ws(av[i]);
 		if (!tok || !tok[0])
-			(free_tokens(tok), ps_error());
+			(ps_error_exit(a, NULL, tok));
 		parse_tokens_to_stack(a, tok);
 		free_tokens(tok);
 		i++;

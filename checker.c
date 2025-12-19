@@ -61,9 +61,7 @@ void	read_and_exec(t_stack *a, t_stack *b)
 		if (!exec_instruction(line, a, b))
 		{
 			free(line);
-			free_stack(a);
-			free_stack(b);
-			ps_error();
+			ps_error_exit(a, b, NULL);
 		}
 		free(line);
 		line = get_next_line(0);
